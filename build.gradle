@@ -1,0 +1,63 @@
+group 'com.streamviewer'
+version '1.0-SNAPSHOT'
+
+apply plugin: "java"
+apply plugin: "war"
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    mavenLocal()
+}
+
+ext {
+  jerseyVersion = '2.26'
+}
+
+dependencies {
+    compile "org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion"
+    compile "org.glassfish.jersey.inject:jersey-hk2:$jerseyVersion"
+    compile "javax.servlet:javax.servlet-api:4.0.0-b07"
+    compile 'com.google.api-client:google-api-client:1.25.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+    compile 'com.google.apis:google-api-services-oauth2:v1-rev145-1.25.0'
+    compile 'com.google.apis:google-api-services-youtube:v3-rev206-1.25.0'
+    compile 'com.google.apis:google-api-services-youtubereporting:v1-rev584-1.25.0'
+    compile 'com.google.apis:google-api-services-youtubeAnalytics:v1-rev339-1.25.0'
+    compile "com.google.code.gson:gson:2.2.4"
+    compile 'com.heroku.sdk:heroku-deploy:2.0.6'
+
+    compile "postgresql:postgresql:9.1-901-1.jdbc4"
+
+    compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+
+    testCompile "junit:junit:4.12"
+}
+
+gretty {
+    contextPath = '/'
+    servletContainer = 'tomcat8'
+}
+
+
+//For Heroku
+task stage() {
+    dependsOn clean, war
+}
+war.mustRunAfter clean
+
+task copyToLib(type: Copy) {
+    into "$buildDir/server"
+    from(configurations.compile) {
+        include "webapp-runner*"
+    }
+}
+
+stage.dependsOn(copyToLib)

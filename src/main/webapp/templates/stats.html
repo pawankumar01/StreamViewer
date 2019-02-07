@@ -1,0 +1,72 @@
+<div class="pagestats">
+    <div ng-include src="'templates/header.html'"></div>
+
+    <md-content laout="column" flex>
+        <md-card class="searchcard">
+            <label>Messages From Users</label>
+            <md-input-container class="md-icon-float md-icon-right md-block" style="height: 40px;">
+                <label>Search Name</label>
+                <input ng-model="searchQuery" type="text" maxlength="100"  ng-keypress="($event.which === 13)?searchChat():0"/>
+                <md-icon md-font-library="material-icons">send</md-icon>
+            </md-input-container>
+            <span class="total">Total {{messages.length}} messages</span>
+
+
+            <div class="messages">
+                <div ng-repeat="message in messages"><span class="personName"> {{message.userName}}: &nbsp;</span> <span class="message">{{message.message}}</span></div>
+            </div>
+        </md-card>
+
+        <md-card>
+            <label>Users and Message Count</label>
+
+            <md-table-container>
+                <table md-table >
+                    <thead md-head md-order="query.order">
+                        <tr md-row>
+                            <th md-column md-order-by="name"><span>UserName</span></th>
+                            <th md-column md-order-by="type"><span>MessageCount</span></th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row ng-repeat="data in chatsdata | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell>{{data.username}}</td>
+                        <td md-cell>
+                          {{data.count}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="query.limit" md-limit-options="[10, 15, 20]" md-page="query.page" md-total="{{chatsdata.count}}" md-page-select></md-table-pagination>
+        </md-card>
+
+        <md-card>
+            <label>Total Users</label>
+
+            <md-table-container>
+                <table md-table >
+                    <thead md-head md-order="userquery.order">
+                    <tr md-row>
+                        <th md-column md-order-by="name"><span>UserName</span></th>
+                        <th md-column md-order-by="type"><span>Email</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row ng-repeat="data in usersdata | filter: filter.search | orderBy: userquery.order | limitTo: userquery.limit : (userquery.page -1) * userquery.limit">
+                        <td md-cell>
+
+                            {{data.name}}
+                        </td>
+                        <td md-cell>
+                            {{data.email}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="userquery.limit" md-limit-options="[10, 15, 20]" md-page="userquery.page" md-total="{{usersdata.count}}"  md-page-select></md-table-pagination>
+        </md-card>
+    </md-content>
+
+</div>

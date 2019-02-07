@@ -1,0 +1,304 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+.loginpage{
+    background-size: cover;
+    background: url("../images/bg.jpg") no-repeat;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+.logo{
+    margin-top: 40vh;
+    width: 100px;
+    display: inline-block;
+}
+
+.loginbutton{
+    width: 250px;
+    height: 35px;
+    background-color: #E10000;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-top:20px;
+    display: inline-block;
+}
+
+.loginbutton:hover{
+    background-color: red;
+}
+
+.home{
+    background-color:#000;
+    text-align: center;
+}
+.mainvideowrapper {
+    height: 440px;
+    background-color: #111111;
+    display: none;
+    text-align: center;
+    padding:20px;
+}
+
+.mainvideo {
+    display: inline-block;
+    /*background-color: #555;*/
+    height: 400px;
+}
+
+.mainvideo iframe {
+    padding-top: 18px;
+}
+.chatlist {
+    background-color: #f9f9f9;
+    height: 350px;
+    text-align: left;
+    display:inline-block;
+    padding: 0;
+}
+
+.chatwrapper {
+    height: 310px !important;
+    /* overflow-y: scroll; */
+    display: flex;
+    flex-direction: column;
+}
+
+.chatlist .livetext{
+    height: 42px;
+    text-transform: uppercase;
+    font-size: 16px;
+    background-color: #eee;
+    padding: 5px;
+    padding-left: 20px;
+    color: #555;
+    letter-spacing: 1.2px;
+}
+
+.chatlist .chatarea {
+    overflow-y: scroll;
+    /*height: 100%;*/
+    overflow-x: hidden;
+
+}
+
+.chatlist .sendmessage {
+    background-color: #eee;
+    padding: 5px;
+    height: 40px;
+}
+
+.chatlist .sendmessage img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    margin-left: 15px;
+}
+
+.chatlist .sendmessage .myauthorName {
+   font-size: 14px;
+   color:black;
+}
+
+.chatlist .singlemessage{
+    margin: 15px 10px;
+    padding-left: 50px;
+}
+
+
+.chatlist .profileimg{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    float: left;
+    margin-left: -40px;
+    border-radius: 50px;
+}
+
+.chatlist .authorName{
+    color: black;
+}
+
+.chatlist .text{
+    color: #555;
+}
+
+.chatlist .error{
+    color: red;
+}
+
+.chatlist .sendchat{
+    border: none;
+    border-bottom: 1px solid #bbb;
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 2px;
+    background: #eee;
+}
+.chatlist input.sendchat:focus {
+    border-color: unset !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none;
+    outline: 0;
+}
+
+
+
+
+.videos{
+    display: inline-block;
+    height: 300px;
+    margin: 5px;
+    cursor: pointer;
+}
+md-card>:not(md-card-content) img, md-card>img {
+    box-sizing : border-box;
+    max-width: 260px;
+}
+md-card-content {
+    background-color: #ddd;
+}
+
+md-card-content>h5{
+    font-size: 14px !important;
+    color: black;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+md-toolbar {
+    min-height: 45px;
+    width:101%;
+}
+
+.tvshowcard {
+    width: 300px;
+    height: 240px;
+    position: relative;
+    background: #222;
+}
+
+.smallplaybutton{
+    /* margin-top: -40px; */
+    /* margin-left: 10px; */
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: calc(50% - 20px);
+    top: 32%;
+
+}
+
+.loadmore{
+    width: 350px;
+    height: 40px;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+
+.brandname {
+    color: white;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.navbar-nav{
+    float: right;
+    right: 20px;
+    position: absolute;
+}
+
+.headerprofileimg{
+    width: 30px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.headername{
+    color: white !important;
+}
+
+.stats{
+    padding-right: 15px !important;
+    border-right: 1px solid #555;
+}
+
+.searchcard{
+    padding: 20px;
+}
+
+.pagestats .messages .personName{
+    font-size: 15px;
+    color: #222;
+}
+
+.pagestats .messages .message{
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
+
+.pagestats .total{
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.fixheight{
+    height: calc(100vh - 66px);
+}
+
+.fixheight .loadmore{
+    display: none;
+}
+
+.limitreached{
+    padding-top: 60px;
+}
+
+.limitreached::after {
+    content: "Sorry, Youtube API Limit has been reached. Please try after sometime!";
+    color: white;
+    margin-top: 30px;
+}
+
+md-card{
+    padding: 20px;
+}
+
+.statstext{
+    font-size: 8px; margin-left:10px
+}
+
+@media only screen  and (max-width: 768px){
+    body {
+        background-size: inherit;
+        width: 100%;
+        height: 100%;
+    }
+
+    .mainvideowrapper {
+         height: auto;
+    }
+
+    .brandname{
+        display: none;
+    }
+
+    .navbar-nav {
+        display: contents;
+        -webkit-box-orient: horizontal;
+    }
+
+}
