@@ -11,6 +11,12 @@ The app is responsive and works well with desktop Web and Mobile devices.
 
 ![alt-text](https://i.ibb.co/0MLjQ51/Screen-Shot-2019-02-07-at-23-10-29.png)
 
+### Other Stats
+* Shows different stats such as
+    - All Registered Users
+    - Users and Message Count
+    - Search Messages with Username
+
 ### Directory Structure
 
 ```
@@ -38,16 +44,16 @@ $ ./gradlew appRun
 ### Functionality
 The app implements following feature:-
 * Backend
-    - Fetch Youtube Live Stream 
+    - Fetch Youtube Live Stream
     - Fetch Current Video's LiveChatId
     - Insert new message in the live chat
     - Store Stats in PostgreSQL
-    
+
 * Frontend
     - Google SignIn
     - Fetch live stream chat directly from Youtube Data API
     - Home page shows different available live streams and allows user to click and play one at a time
-    - Stats page show different stats such as all users registered, username with message count and also allows to search chat based on username.
+    - Stats page show different stats mentioned above
 
 
 ### Hosted
