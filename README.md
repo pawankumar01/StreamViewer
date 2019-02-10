@@ -23,6 +23,7 @@ The app is responsive and works well with desktop Web and Mobile devices.
 src |
     |-java (backend)
     |-webapp (frontend)
+    	|-svlogin.js (contains client login code)
     |-resources (contains youtube api key and credentials)
 ```
 ### Technology Used
